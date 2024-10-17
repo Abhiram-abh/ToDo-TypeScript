@@ -1,13 +1,120 @@
+/* src/index.css */
+
 body {
+  font-family: Arial, sans-serif;
+  background-color: #e9ecef; /* Light background */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #5f2c91 0%, #49a09d 100%); /* Purple to Teal */
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  max-width: 600px;
+  width: 100%;
+  background: #ffffff; /* White background for the app */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+.App:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.header {
+  display: flex;
+  flex-direction: column; /* Stack header elements vertically */
+  align-items: center; /* Center align header items */
+}
+
+.todo-header {
+  font-size: 2.5em; /* Larger font size */
+  color: #343a40; /* Dark grey color */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center align the text */
+  padding-bottom: 15px; /* Space below the heading */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px; /* Space between input and button */
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1; /* Make inputs take full width */
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff; /* Blue border on focus */
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.todoList {
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center align items */
+  padding: 15px;
+  border-radius: 5px;
+  background: #f8f9fa; /* Light grey background for tasks */
+  border: 1px solid #dee2e6; /* Light border */
+  margin-bottom: 10px; /* Space between tasks */
+  transition: background-color 0.3s ease;
+}
+
+.task:hover {
+  background: #e2e6ea; /* Slightly darker grey on hover */
+}
+
+.task .content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+.task .content span {
+  margin-right: 10px;
+  font-weight: bold; /* Make task names bold */
+}
+
+.task .content span:last-child {
+  color: #6c757d; /* Grey color for deadlines */
+}
+
+.task button {
+  background-color: #dc3545; /* Danger color for delete */
+  transition: background-color 0.3s ease;
+}
+
+.task button:hover {
+  background-color: #c82333; /* Darker red on hover */
 }
