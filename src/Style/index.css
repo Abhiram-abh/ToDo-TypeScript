@@ -1,0 +1,317 @@
+/* General Body Styles */
+body {
+    background-color: black; /* Black background */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the To-Do List */
+.todo-container {
+    background-color: #1a1a1a; /* Dark gray for the container */
+    color: white; /* White text color */
+    width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1), 0 6px 6px rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2); /* Slight hover effect for container */
+}
+
+/* Heading Style */
+/* Heading Style */
+/* Heading Style */
+.todo-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: #FF6F61; /* Bright Coral for heading */
+    letter-spacing: 1.5px;
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #444; /* Dark border for heading */
+}
+
+
+/* Input and Button Container */
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444; /* Dark border */
+    margin-right: 10px;
+    width: 180px;
+    font-size: 1rem;
+    outline: none;
+    color: white; /* Text color */
+    background-color: #333; /* Dark input background */
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #7bb8d7; /* Glove blue border on focus */
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
+}
+
+button {
+    background-color: #00aaff; /* Glove blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0088cc; /* Darker blue on hover */
+    transform: translateY(-3px);
+}
+
+/* Task List Styles */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e3d8d8; /* Darker task background */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444; /* Dark border for tasks */
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #efe8e8;
+}
+
+
+
+
+.task:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(255, 255, 255, 0.1);
+}
+
+.task.completed {
+    text-decoration: line-through;
+    color: #aaa; /* Lighter gray for completed tasks */
+    
+}
+
+/* Task Buttons (Delete, Edit) */
+.task button {
+    background: none;
+    color: #ff4d4d; /* Red for delete button */
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.task button:hover {
+    color: #ff1a1a;
+}
+
+.task button.edit {
+    color: #ffcc00; /* Yellow for edit button */
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .todo-container {
+        width: 90%;
+    }
+
+    input[type="text"], input[type="number"] {
+        width: 120px;
+    }
+}
+/* General Body Styles */
+body {
+    background-color: black; /* Black background */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the To-Do List */
+.todo-container {
+    background-color: #1a1a1a; /* Dark gray for the container */
+    color: white; /* White text color */
+    width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1), 0 6px 6px rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2); /* Slight hover effect for container */
+}
+.todo-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: #4169E1; /* Royal Blue for heading */
+    letter-spacing: 1.5px;
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #444; /* Dark border for heading */
+}
+h1 {
+    font-size: 3rem; /* Slightly larger font size */
+    margin-bottom: 25px;
+    color: #e6e6e6; /* Base color */
+    letter-spacing: 1.5px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 
+        0 0 3px rgba(230, 230, 230, 0.5),  /* Soft white glow */
+        0 0 5px rgba(230, 230, 230, 0.5),  /* Stronger white glow */
+        0 0 7px rgba(0, 170, 255, 0.3),    /* Reduced glove blue glow */
+        0 0 10px rgba(0, 170, 255, 0.2);   /* Faded blue glow */
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #444; /* Dark border for heading */
+    transition: color 0.3s ease; /* Transition for smooth effect */
+}
+
+ h1:hover {
+    color: #00aaff; /* Change color on hover */
+    text-shadow: 
+        0 0 5px rgba(230, 230, 230, 0.7),  /* Brighter white glow on hover */
+        0 0 8px rgba(230, 230, 230, 0.7),  /* Stronger white glow on hover */
+        0 0 10px rgba(0, 170, 255, 0.5),   /* Reduced glove blue glow on hover */
+        0 0 15px rgba(0, 170, 255, 0.3);   /* Faded blue glow on hover */
+}
+
+
+
+
+
+/* Input and Button Container */
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444; /* Dark border */
+    margin-right: 10px;
+    width: 180px;
+    font-size: 1rem;
+    outline: none;
+    color: white; /* Text color */
+    background-color: #333; /* Dark input background */
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #00aaff; /* Glove blue border on focus */
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
+}
+
+button {
+    background-color: #00aaff; /* Glove blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0088cc; /* Darker blue on hover */
+    transform: translateY(-3px);
+}
+
+/* Task List Styles */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222; /* Darker task background */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444; /* Dark border for tasks */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(255, 255, 255, 0.1);
+}
+
+.task.completed {
+    text-decoration: line-through;
+    color: #aaa; /* Lighter gray for completed tasks */
+}
+
+/* Task Buttons (Delete, Edit) */
+.task button {
+    background: none;
+    color: #ff4d4d; /* Red for delete button */
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.task button:hover {
+    color: #ff1a1a;
+}
+
+.task button.edit {
+    color: #ffcc00; /* Yellow for edit button */
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .todo-container {
+        width: 90%;
+    }
+
+    input[type="text"], input[type="number"] {
+        width: 120px;
+    }
+}

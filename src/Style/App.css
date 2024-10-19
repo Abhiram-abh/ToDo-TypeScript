@@ -1,0 +1,103 @@
+/* Homepage styles */
+.homepage {
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Ensure you include this font */
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+    min-height: 100vh; /* Full height to center content */
+}
+
+/* Todo List Container */
+.todoList {
+    margin-top: 20px;
+    max-width: 600px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center the todo list */
+    background-color: white; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Inner padding */
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px; /* Increased padding for better touch targets */
+    background-color: #333333; /* Dark background for tasks */
+    color: #ab6868; /* Light gray text for better contrast */
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded corners for tasks */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Soft shadow for separation */
+}
+
+.task:hover {
+    background-color: #e2d9d9; /* Slightly lighter on hover */
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Completed task style */
+.task.completed {
+    text-decoration: line-through; /* Strike-through for completed tasks */
+    color: #e4dcdc; /* Lighter gray for completed tasks */
+}
+
+
+/* Content section of task */
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Allow the content to fill the available space */
+}
+
+/* Custom Button */
+.custom-button {
+    background-color: #d0dfe4; /* Light blue button */
+    border: none;
+    border-radius: 5px; /* Rounded corners for button */
+    padding: 10px 15px; /* Increased padding for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    font-weight: bold; /* Bold text for button */
+}
+
+.custom-button:hover {
+    background-color: #21a1f1; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Input Field */
+input[type="text"] {
+    padding: 10px; /* Inner padding for text input */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border */
+    width: 70%; /* Width of the input field */
+    margin-right: 10px; /* Space between input and button */
+    transition: border-color 0.3s; /* Smooth transition */
+    font-size: 1rem; /* Consistent font size */
+}
+
+input[type="text"]:focus {
+    border-color: #61dafb; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(233, 240, 242, 0.5); /* Subtle glow on focus */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .task {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .content {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px); /* Full width minus margins */
+    }
+
+    .custom-button {
+        width: 100%; /* Full width button on small screens */
+    }
+}
