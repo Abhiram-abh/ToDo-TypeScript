@@ -1,28 +1,36 @@
+// src/pages/HomePage/index.tsx
 import React, { useState } from "react";
-import FormInput from "../../Components/FormInput/Index";
-import TodoList from "../../Components/TodoList/Index";
-import { ITask } from "../../State/TodoStore";
-import '../../Style/index.css'
+import HomeContainer from "../../Components/containers/HomeContainer"; // Ensure correct import
+import TodoList from "../../Components/TodoList"; // Adjust this import path
+import { ITask } from "../../State/TodoStore"; // Ensure this import path is correct
 
-const Homepage: React.FC = () => {
-  const [todoList, setTodoList] = useState<ITask[]>([]);
+const HomePage: React.FC = () => {
+  const [todos, setTodos] = useState<ITask[]>([]);
 
-  const addTask = (taskName: string, deadline: number) => {
-    const newTask: ITask = { taskName, deadline };
-    setTodoList([...todoList, newTask]);
+  // Log the todos
+  console.log("Current todos:", todos);
+
+  const addTask = (newTask: Omit<ITask, 'id'>) => {
+    const taskWithId = { ...newTask, id: Date.now() };
+    setTodos([...todos, taskWithId]);
+    console.log("Added task:", taskWithId);
   };
 
-  const completeTask = (taskNameToDelete: string) => {
-    setTodoList(todoList.filter((task) => task.taskName !== taskNameToDelete));
+  const completeTask = (taskIdToDelete: number) => {
+    setTodos(todos.filter((task) => task.id !== taskIdToDelete));
+    console.log("Completed task ID:", taskIdToDelete);
   };
 
   return (
-    <div className="homepage">
-      <h1>🧤 My Todo</h1>
-      <FormInput addTask={addTask} />
-      <TodoList todoList={todoList} completeTask={completeTask } />
+    <div>
+      <HomeContainer addTask={addTask} />
+      {todos.length === 0 ? (
+        <p className="task-msg">No tasks available. Please add some tasks!</p>
+      ) : (
+        <TodoList todoList={todos} completeTask={completeTask} />
+      )}
     </div>
   );
 };
 
-export default Homepage;
+export default HomePage; // Ensure this line is included

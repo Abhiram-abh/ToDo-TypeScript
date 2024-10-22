@@ -10,6 +10,7 @@ body {
     height: 100vh;
 }
 
+
 /* Container for the To-Do List */
 .todo-container {
     background-color: #1a1a1a; /* Dark gray for the container */
@@ -45,21 +46,27 @@ body {
 /* Input and Button Container */
 .inputContainer {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Aligns items in the center */
+    align-items: center; /* Vertically centers items */
     margin-bottom: 20px;
+}
+.he{
+    display: flex;
+    justify-content: center; /* Aligns items in the center */
+    align-items: center;
 }
 
 input[type="text"], input[type="number"] {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #444; /* Dark border */
-    margin-right: 10px;
-    width: 180px;
-    font-size: 1rem;
-    outline: none;
-    color: white; /* Text color */
-    background-color: #333; /* Dark input background */
-    transition: all 0.3s ease;
+    padding: 12px;                     /* Inner padding for text input */
+    border-radius: 8px;                /* Rounded corners */
+    border: 1px solid #444;            /* Dark border */
+    margin-right: 10px;                /* Space between input fields and button */
+    width: 150px;                      /* Adjust width as needed */
+    font-size: 1rem;                   /* Consistent font size */
+    outline: none;                     /* Remove default outline */
+    color: white;                      /* Text color */
+    background-color: #333;           /* Dark input background */
+    transition: all 0.3s ease;  
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
@@ -149,7 +156,7 @@ button:hover {
 }
 /* General Body Styles */
 body {
-    background-color: black; /* Black background */
+    background-color: rgb(16, 16, 16); /* Black background */
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -157,6 +164,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+.task-msg{
+    color: #aaa;
 }
 
 /* Container for the To-Do List */
