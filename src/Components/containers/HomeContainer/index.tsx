@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import FormInput from "../../base/FormInput"; // Ensure this import path is correct
-import FormButton from "../../base/FormButton"; // Ensure this import path is correct
-import { ITask } from "../../../State/TodoStore"; // Ensure this import path is correct
+import FormInput from "../../../components/base/FormInput/index"; 
+import FormButton from "../../../components/base/FormButton/index"; 
+import { ITask } from "../../../state/TodoStore"; 
 
 interface HomeContainerProps {
   addTask: (task: ITask) => void;
 }
 
 const HomeContainer: React.FC<HomeContainerProps> = ({ addTask }) => {
-  const [taskName, setTaskName] = useState<string>(""); // Ensure taskName is a string
-  const [deadline, setDeadline] = useState<number>(0);  // Ensure deadline is a number
+  const [taskName, setTaskName] = useState<string>(""); 
+  const [deadline, setDeadline] = useState<number>(0);  
 
   const handleAddTask = (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent form submission from reloading the page
+    e.preventDefault(); 
     
     const newTask: ITask = { id: Date.now(), taskName, deadline };
-    addTask(newTask); // Call the addTask function passed as a prop
+    addTask(newTask); 
     
-    setTaskName(""); // Reset task name
-    setDeadline(0);  // Reset deadline
+    setTaskName(""); 
+    setDeadline(0); 
   };
 
   return (
@@ -29,15 +29,15 @@ const HomeContainer: React.FC<HomeContainerProps> = ({ addTask }) => {
           type="text"
           placeholder="Task Name"
           text={taskName}
-          onChange={(e) => setTaskName(e.target.value)} // Capture task name
+          onChange={(e) => setTaskName(e.target.value)}
         />
         <FormInput
           type="number"
           placeholder="Deadline (days)"
-          text={deadline.toString()} // Convert deadline to string for input
+          text={deadline.toString()} 
           onChange={(e) => {
             const value = e.target.value;
-            setDeadline(value ? Number(value) : 0); // Convert to number, or fallback to 0
+            setDeadline(value ? Number(value) : 0); 
           }}
         />
         <FormButton

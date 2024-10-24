@@ -1,4 +1,3 @@
-// src/Components/base/FormButton/index.tsx
 
 import React from 'react';
 
@@ -7,13 +6,12 @@ type FormButtonProps = {
   variant: 'primary' | 'secondary' | 'success' | 'danger' | 'link';
   buttonName?: string; 
   fontSize?: string;
-  onClick?: () => void; // General click handler
-  onSubmit?: () => void; // Specific submit handler
-  onDelete?: (id: number) => void; // Specific delete handler
-  id?: number; // Task ID for delete
+  onClick?: () => void;
+  onSubmit?: () => void; 
+  onDelete?: (id: number) => void; 
+  id?: number; 
 };
 
-// ButtonStyles function definition
 const ButtonStyles = (variant: string) => {
   switch (variant) {
     case 'primary':
@@ -45,17 +43,17 @@ const FormButton: React.FC<FormButtonProps> = ({
   
   const handleClick = () => {
     if (type === 'delete' && onDelete && id !== undefined) {
-      onDelete(id); // Call onDelete with id if it's a delete button
+      onDelete(id); 
     } else if (type === 'submit' && onSubmit) {
-      onSubmit(); // Call onSubmit if it's a submit button
+      onSubmit(); 
     } else if (onClick) {
-      onClick(); // General click handler for other buttons
+      onClick(); 
     }
   };
 
   return (
     <button 
-      type={type === 'delete' ? 'button' : type} // Prevent default submit behavior for delete
+      type={type === 'delete' ? 'button' : type} 
       className={style}
       onClick={handleClick}
     >

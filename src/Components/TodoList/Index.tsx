@@ -1,11 +1,10 @@
-// src/components/custom/TodoList/index.tsx
 import React from "react";
-import { ITask } from "../../State/TodoStore"; // Ensure correct import path
-import FormButton from "../../Components/base/FormButton/index"; // Ensure correct import path
+import { ITask } from "../../state/TodoStore"; 
+import FormButton from "../../components/base/FormButton/index"; 
 
 interface TodoListProps {
   todoList: ITask[];
-  completeTask: (taskId: number) => void; // Ensure type matches
+  completeTask: (taskId: number) => void; 
 }
 
 const TodoList: React.FC<TodoListProps> = ({ todoList, completeTask }) => {
@@ -18,11 +17,11 @@ const TodoList: React.FC<TodoListProps> = ({ todoList, completeTask }) => {
             <span>{task.deadline}{""} days</span>
           </div>
           <FormButton 
-            type="delete" // Specify as delete type
-            variant="danger" // Use danger variant for delete
-            buttonName="Delete" // Update button name to "Delete"
-            onDelete={completeTask} // Pass completeTask directly
-            id={task.id} // Pass task ID
+            type="delete" 
+            variant="danger" 
+            buttonName="Delete" 
+            onDelete={completeTask} 
+            id={task.id} 
           />
         </div>
       ))}

@@ -1,8 +1,7 @@
-// src/pages/HomePage/index.tsx
 import React, { useState } from "react";
-import HomeContainer from "../../Components/containers/HomeContainer"; // Ensure correct import
-import TodoList from "../../Components/TodoList"; // Adjust this import path
-import { ITask } from "../../State/TodoStore"; // Ensure this import path is correct
+import HomeContainer from "../../components/containers/HomeContainer"; 
+import TodoList from "../../components/TodoList";   
+import { ITask } from "../../state/TodoStore";    
 
 const HomePage: React.FC = () => {
   const [todos, setTodos] = useState<ITask[]>([]);

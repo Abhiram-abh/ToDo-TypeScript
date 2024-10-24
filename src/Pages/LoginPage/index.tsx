@@ -1,7 +1,7 @@
 // src/containers/LoginContainer/index.tsx
 import React, { useState } from "react";
-import FormInput from "../../Components/base/FormInput/index"; // Adjust the import if needed
-import FormButton from "../../Components/base/FormButton/index"; // Adjust the import if needed
+import FormInput from "../../components/base/FormInput/index"; // Adjust the import if needed
+import FormButton from "../../components/base/FormButton/index"; // Adjust the import if needed
 import { loginUser } from "../../utils/auth"; // Ensure this path is correct
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 import "./LoginPage.css"; // Add your CSS file for styling

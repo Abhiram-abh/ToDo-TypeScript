@@ -1,25 +1,24 @@
-// src/containers/LoginContainer/index.tsx
 import React, { useState } from "react";
-import FormInput from "../../../Components/base/FormInput/index"; // Adjust the import if needed
-import FormButton from "../../../Components/base/FormButton/index"; // Adjust the import if needed
-import { loginWithGoogle } from "../../../utils/auth"; // Adjust the import according to your project structure
-import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import FormInput from "../../../components/base/FormInput/index"; 
+import FormButton from "../../../components/base/FormButton/index"; 
+import { loginWithGoogle } from "../../../utils/auth"; 
+import { useNavigate } from "react-router-dom"; 
 
 const LoginContainer: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const navigate = useNavigate(); // Initialize useNavigate for redirection
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email/password login
+   
   };
 
   const handleGoogleLogin = async () => {
     try {
       await loginWithGoogle();
-      navigate("/"); // Redirect to home page after successful login
+      navigate("/"); 
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);

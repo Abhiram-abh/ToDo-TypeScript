@@ -1,7 +1,7 @@
 // src/containers/SignUpContainer/index.tsx
 import React, { useState } from 'react';
-import FormInput from '../../Components/base/FormInput/index';
-import FormButton from '../../Components/base/FormButton/index'; 
+import FormInput from '../../components/base/FormInput/index';
+import FormButton from '../../components/base/FormButton/index'; 
 import { registerUser } from '../../utils/auth'; 
 import "./SignUpPage.css"
 

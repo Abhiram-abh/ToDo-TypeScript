@@ -1,11 +1,10 @@
-// src/Components/custom/TodoList/index.tsx
 import React from "react";
-import ListItem from "../ListItem"; // Adjust this path if necessary
-import { ITask } from "../../../State/TodoStore"; // Import the ITask interface
+import ListItem from "../ListItem"; 
+import { ITask } from "../../../state/TodoStore"; 
 
 interface TodoListProps {
-  todoList: ITask[]; // Expecting an array of tasks
-  completeTask: (taskIdToDelete: number) => void; // Function to handle task completion
+  todoList: ITask[]; 
+  completeTask: (taskIdToDelete: number) => void; 
 }
 
 const TodoList: React.FC<TodoListProps> = ({ todoList, completeTask }) => {

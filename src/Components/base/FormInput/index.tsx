@@ -1,10 +1,9 @@
-// src/Components/FormInput.tsx
 import React from 'react';
 
 type FormInputProps = {
-  type?: string; // Allow type to be optional
+  type?: string; 
   placeholder?: string;
-  text?: string; // The input text
+  text?: string; 
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
 };
 

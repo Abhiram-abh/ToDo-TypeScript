@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom"; // Import Router
 import AppRouter from "./routes/AppRouter"; // Use your AppRouter for routing
-import "./Style/index.css"; // Ensure this path is correct
+import "./style/index.css"; // Ensure this path is correct
 
 const rootElement = document.getElementById("root");
 
