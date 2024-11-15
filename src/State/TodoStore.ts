@@ -1,6 +1,8 @@
-// Assuming your ITask interface is defined in src/State/TodoStore.ts
+// src/state/TodoStore.ts
 export interface ITask {
-  id: number;         // Unique identifier
-  taskName: string;   // Task name
-  deadline: number;   // Deadline in days
+  id: number; // Make sure this is a string
+  taskName: string; // Example properties
+  deadline: number; // Adjust according to your schema
 }
+
+

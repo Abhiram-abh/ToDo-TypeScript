@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import FormInput from "../../../components/base/FormInput/index"; 
 import FormButton from "../../../components/base/FormButton/index"; 
-import { app } from "../../../Firebase"; 
+import { app } from "../../../firebaseConfig"; 
 import { getAuth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 import { useNavigate } from "react-router-dom"; 
+
 
 const SignUpContainer: React.FC = () => {
   const [email, setEmail] = useState<string>("");

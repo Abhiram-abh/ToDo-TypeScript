@@ -17,6 +17,7 @@ const LoginContainer: React.FC = () => {
 
   const handleGoogleLogin = async () => {
     try {
+      console.log("sign in at login container/index.tsx")
       await loginWithGoogle();
       navigate("/"); 
     } catch (err) {

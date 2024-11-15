@@ -9,7 +9,7 @@ interface HomeContainerProps {
 
 const HomeContainer: React.FC<HomeContainerProps> = ({ addTask }) => {
   const [taskName, setTaskName] = useState<string>(""); 
-  const [deadline, setDeadline] = useState<number>(0);  
+  const [deadline, setDeadline] = useState<number>(0);  // Make sure this is a number
 
   const handleAddTask = (e: React.FormEvent) => {
     e.preventDefault(); 
@@ -37,7 +37,7 @@ const HomeContainer: React.FC<HomeContainerProps> = ({ addTask }) => {
           text={deadline.toString()} 
           onChange={(e) => {
             const value = e.target.value;
-            setDeadline(value ? Number(value) : 0); 
+            setDeadline(value ? Number(value) : 0); // Convert to number
           }}
         />
         <FormButton

@@ -5,6 +5,7 @@ import FormButton from "../../components/base/FormButton/index"; // Adjust the i
 import { loginUser } from "../../utils/auth"; // Ensure this path is correct
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 import "./LoginPage.css"; // Add your CSS file for styling
+import Cookies from "js-cookie";
 
 const LoginContainer: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -14,8 +15,15 @@ const LoginContainer: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("sign in AT pages/login page/index.tsx")
     try {
-      await loginUser(email, password);
+      const user  = await loginUser(email, password);
+      console.log("user",user.user.getIdToken());
+      const accessToken = await user.user.getIdToken();
+
+      const uid = user.user.uid;
+
+      Cookies.set("accessToken", accessToken, { expires: 7 });
       navigate("/"); // Redirect to home page after successful login
     } catch (err) {
       if (err instanceof Error) {

@@ -1,19 +1,29 @@
-// src/firebaseConfig.ts
-import { initializeApp } from "firebase/app";
+// src/services/todoService.ts
+import { firestore } from '../src/firebaseConfig'; // Correct import of db
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { ITask } from '../src/state/TodoStore'; // Assuming ITask is your todo type
 
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyC7RlOYK8a-8bOzNWK8FVPErFE87bIBQuA",
-  authDomain: "todo-3b1c7.firebaseapp.com",
-  projectId: "todo-3b1c7",
-  storageBucket: "todo-3b1c7.appspot.com",
-  messagingSenderId: "108163471667",
-  appId: "1:108163471667:web:b80f73b3bde4f64b20c646",
-  measurementId: "G-RCW492EFGD",
+const todoCollectionRef = collection(firestore, 'todos'); // Replace 'todos' with your Firestore collection name
+
+export const createTodo = async (newTask: Omit<ITask, 'id'>) => {
+  await addDoc(todoCollectionRef, newTask);
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// src/Firebase.ts (or wherever you are fetching todos)
+export const getTodos = async (): Promise<ITask[]> => {
+  const querySnapshot = await getDocs(todoCollectionRef);
+  return querySnapshot.docs.map(doc => {
+    const data = doc.data() as { taskName: string; deadline: number }; // Define expected structure
+    return {
+      id: Number(doc.id), // Convert id to number
+      taskName: data.taskName,
+      deadline: data.deadline,
+    } as ITask; // Ensure to match the ITask structure
+  });
+};
 
-// Export app (named export)
-export { app };
+
+export const deleteTodo = async (taskId: string) => {
+  const todoDoc = doc(firestore, 'todos', taskId);
+  await deleteDoc(todoDoc);
+};
